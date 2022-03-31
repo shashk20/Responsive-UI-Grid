@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 1</title>
+    <style>
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .box{
+            border: 3px solid black;
+            width: 34%;
+            height: 80px;
+            margin: 40px 30px;
+            display: flex;
+            align-items: center;
+        }
+        p{
+            padding-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1">
+            <p>
+                <button onclick="Bold('1')">Bold</button>,
+                <button onclick="Italic('1')">Italic</button>,
+                <button onclick="Underline('1')">Underline</button>,
+                <input type="number" name="font-size" id="font-size1" onkeyup="FontSize(1)">,
+                <input type="color" name="color" id="color1">
+            </p>
+        </div>
+        <div class="box" id="box2">
+            <p id="1" class="text">He is not the sharpest knife in the drawer.</p>           
+        </div>
+        <div class="box" id="box3">
+            <p>
+                <button onclick="Bold('2')">Bold</button>,
+                <button onclick="Italic('2')">Italic</button>,
+                <button onclick="Underline('2')">Underline</button>,
+                <input type="number" name="font-size" id="font-size2" onkeyup="FontSize(2)">,
+                <input type="color" name="color" id="color2">
+            </p>
+        </div>
+        <div class="box" id="box4">
+            <p id="2" class="text">The big building was blazing with lights.</p>   
+        </div>
+        <div class="box" id="box5">
+            <p>
+                <button onclick="Bold('3')">Bold</button>,
+                <button onclick="Italic('3')">Italic</button>,
+                <button onclick="Underline('3')">Underline</button>,
+                <input type="number" name="font-size" id="font-size3" onkeyup="FontSize(3)">,
+                <input type="color" name="color" id="color3">
+            </p>
+        </div>
+        <div class="box" id="box6">
+            <p id="3" class="text">Now you must answer some big questions.</p>
+        </div>
+        <div class="box" id="box7">
+            <p>
+                <button onclick="Bold('4')">Bold</button>,
+                <button onclick="Italic('4')">Italic</button>,
+                <button onclick="Underline('4')">Underline</button>,
+                <input type="number" name="font-size" id="font-size4" onkeyup="FontSize(4)">,
+                <input type="color" name="color" id="color4">
+            </p>
+        </div>
+        <div class="box" id="box8">
+            <p id="4" class="text">Get your act together.</p>
+        </div>
+    </div>
+
+
+
+    <script>
+        function Bold(s){
+            // let text=document.getElementsByClassName("text");
+            let text=document.getElementById(s);
+            if(text.style.fontWeight=="bolder"){
+                text.style.fontWeight="normal";
+            }
+            else{
+                text.style.fontWeight="bolder";
+            }
+        }
+
+        function Italic(s){
+            let text=document.getElementById(s);
+            if(text.style.fontStyle=="italic"){
+                text.style.fontStyle="normal";
+            }
+            else{
+                text.style.fontStyle="italic";
+            }
+        }
+
+        function Underline(s){
+            let text=document.getElementById(s);
+            if(text.style.textDecoration=="underline"){
+                text.style.textDecoration="none";
+            }
+            else{
+                text.style.textDecoration="underline";
+            }
+        }
+
+        function FontSize(val){
+            let num=document.getElementById("font-size"+ val).value;
+            document.getElementById(val).style.fontSize=num + "px";
+        }
+        
+    </script>
+</body>
+</html>
